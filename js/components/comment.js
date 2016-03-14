@@ -6,7 +6,7 @@ export default class Comment extends React.Component{
   render() {
     return (
       <div className="comment">
-        <h2>Hello I am Comment</h2>
+        <h2>BUTZ</h2>
       </div>
     );
   }

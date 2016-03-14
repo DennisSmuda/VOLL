@@ -3,7 +3,11 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  entry: './js/index',
+  resolve: {
+    modulesDirectories: ['node_modules', 'scripts', 'stylesheets'],
+    extensions: ['', '.js', '.scss'],
+  },
+  entry: ['./js/index', './styles/main.scss'],
   output: {
     filename: 'browser-bundle.js'
   },
@@ -12,6 +16,7 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
+        exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
           presets: ['es2015', 'react']
@@ -19,13 +24,11 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loaders: ExtractTextPlugin.extract('css!sass')
+        loader: ExtractTextPlugin.extract('css-loader?sourceMap!sass-loader?sourceMap=true&sourceMapContents=true')
       }
     ]
   },
   plugins: [
-    new ExtractTextPlugin('public/style.css', {
-      allChunks: true
-    })
+    new ExtractTextPlugin("main.css")
   ]
 };
