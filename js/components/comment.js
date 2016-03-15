@@ -5,9 +5,9 @@ export default class Comment extends React.Component{
 
   render() {
     return (
-      <div className="comment">
+      <main className="main">
         <h2>BUTZ</h2>
-      </div>
+      </main>
     );
   }
 }
