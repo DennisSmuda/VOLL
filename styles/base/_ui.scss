@@ -1,0 +1,50 @@
+.ui-container {
+  height: 50px;
+  margin-bottom: 1rem;
+}
+
+
+button {
+  background-color: #f1f1f1;
+  height: 100%;
+  padding: 1rem;
+  border: none;
+  font-size: 0.7rem;
+  transition: all 0.3s;
+  border: 1px solid #ccc;
+
+
+  &:hover {
+    background-color: #c1c1c1;
+  }
+}
+
+
+input {
+  box-sizing: border-box;
+  height: 100%;
+  padding: 0;
+  border: 1px solid #ccc;
+  border-right: none;
+}
+
+
+
+// Animation example
+.example-enter {
+  opacity: 0.01;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.example-leave {
+  opacity: 1;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}

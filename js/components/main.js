@@ -1,24 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-const Main = React.createClass({
+export default class Main extends React.Component {
 
-  render: function() {
-
+  render() {
 
     return(
-
       <main className="main">
 
-        <h2>Homepage</h2>
-        <ul role="nav">
-          <li><Link to="/comment">Comment</Link></li>
+        <h2>HOME</h2>
+
+        <ul className="navigation">
+          <li><Link to="/projects">Projekte</Link></li>
+          <li><Link to="/about">Über uns</Link></li>
         </ul>
 
       </main>
     );
   }
-});
-
-
-export default Main;
+}

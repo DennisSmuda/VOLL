@@ -1,5 +1,10 @@
+@import 'base/variables';
+
+@import 'base/ui';
+
 @import 'base/body.scss';
 @import 'base/typo.scss';
 
 @import 'components/navbar.scss';
 @import 'components/item.scss';
+@import 'components/projects.scss';

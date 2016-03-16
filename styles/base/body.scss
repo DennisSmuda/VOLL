@@ -4,7 +4,8 @@
   box-sizing: border-box;
 }
 
-$background-color: #FDFDFD;
+* { box-sizing: border-box; }
+
 
 body {
   width: 100%;
@@ -25,4 +26,15 @@ main.hacker-news ol {
   width: 100%;
   list-style-type: none;
   padding: 0;
+}
+
+
+.link {
+  color: $black;
+  font-weight: 400;
+  transition: all 0.3s;
+
+  &.active {
+    font-weight: 700;
+  }
 }
