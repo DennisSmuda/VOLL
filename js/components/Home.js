@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router';
 
+import NavLink from '../modules/NavLink';
+
 export default class Main extends React.Component {
 
   render() {
@@ -11,8 +13,8 @@ export default class Main extends React.Component {
         <h2>HOME</h2>
 
         <ul className="navigation">
-          <li><Link to="/projects">Projekte</Link></li>
-          <li><Link to="/about">Über uns</Link></li>
+          <li><NavLink to="/projects">Projekte</NavLink></li>
+          <li><NavLink to="/about">Über uns</NavLink></li>
         </ul>
 
       </main>

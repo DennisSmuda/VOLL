@@ -1,35 +1,39 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, Link, hashHistory } from 'react-router';
+import { Router, Route, Link, browserHistory, IndexRoute } from 'react-router';
 
+import App from './containers/App';
 
-import Navbar from './components/navbar';
-import Main from './components/main';
-import About from './components/about';
-
-import Projekte from './components/projects';
-import Rewe from './components/rewe';
-import Provinzial from './components/provinzial';
+import Navbar from './modules/Navbar';
 import NavLink from './modules/NavLink.js';
 
+import Home from './components/Home';
+import About from './components/about';
 
-class App extends React.Component{
+import Projects from './components/Projects';
+import Project from './components/Project';
+
+
+class Index extends React.Component{
 
   render() {
     return (
-      <div className="container">
-        <Router history={hashHistory}>
-          <Route path="/" component={Main}/>
-          <Route path="/projects" component={Projekte}>
-            <Route path="/rewe" component={Rewe} />
-            <Route path="/provinzial" component={Provinzial} />
+      <Router history={ browserHistory }>
+        <Route path="/">
+
+          <IndexRoute component={App} />
+
+          <Route path="/projects" component={Projects}>
+            <Route path="/projects/:projectName" component={Project} />
           </Route>
+
           <Route path="/about" component={About} />
-        </Router>
-      </div>
+          <Route path="/about" component={About} />
+        </Route>
+      </Router>
     );
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<Index />, document.getElementById('root'));
